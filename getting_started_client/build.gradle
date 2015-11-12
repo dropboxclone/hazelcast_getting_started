@@ -1,0 +1,25 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile "com.hazelcast:hazelcast-client:3.5.3"
+}
+
+jar {
+    baseName = 'hazelcast-gs-client'
+    version =  '0.1.0'
+}
+
+apply plugin: 'application'
+
+mainClassName = 'gsclient.GettingStartedClient'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.8'
+}
